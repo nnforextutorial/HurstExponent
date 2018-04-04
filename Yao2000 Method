@@ -1,0 +1,11 @@
+//Creates cumulative deviation over n (i in this case) periods (daily in this case). The deviations are put into
+//a list that I cannot perform further processing on (e.g. apply(USDJPYDevList,2,max) for finding maximum). 
+//Please revise and see how this could be done.
+
+for (i in 1:180){
+    MeanDev <- USDJPY$USD.JPY[i] - mean(USDJPY$USD.JPY)
+    name <- paste('item:',i,sep='')
+    tmp <- list(MeanDeviation=MeanDev)
+    USDJPYDevList[[name]] <- tmp
+}
+
